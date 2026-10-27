@@ -246,8 +246,8 @@
   @keyframes flick { 0% { transform: scale(1, 1) skewX(0); } 35% { transform: scale(.94, 1.08) skewX(3deg); } 70% { transform: scale(1.04, .95) skewX(-3deg); } 100% { transform: scale(.97, 1.05) skewX(1deg); } }
   @keyframes glow { 0% { opacity: .75; transform: scale(.95); } 50% { opacity: 1; } 100% { opacity: .82; transform: scale(1.05); } }
 
-  /* اللوجو: درع ملكي أحمر غامق وفوقه تاج دهب، وجواه أول حرفين من الاسمين */
-  .crest { display: block; width: 84px; height: 89px; margin: 0 auto 14px; overflow: visible; filter: drop-shadow(0 5px 8px rgba(90,50,20,.35)); }
+  /* اللوجو: إكليل ورق غار دهب، وجواه أول حرفين من الاسمين */
+  .crest { display: block; width: 96px; height: 96px; margin: 0 auto 12px; overflow: visible; filter: drop-shadow(0 1px 1px rgba(255,255,255,.7)); }
   /* شريطة حمرا للعناوين الصغيرة */
   .ribbon { display: inline-block; padding: 7px 30px; margin-bottom: 8px;
     font-family: "Tajawal", sans-serif; font-size: 13px; font-weight: 500; color: #f6dfa4;
@@ -292,7 +292,7 @@
   @media (max-height: 700px) {
     .count { gap: 10px 14px; margin: 14px 0 10px; } .count > div { padding: 12px 0 8px; } .count b { font-size: 38px; }
     .page.castle .heading { font-size: 30px; } .page.castle { padding-top: 70px; padding-bottom: 76px; } .verse { font-size: 19px; line-height: 1.9; }
-    .lux-names { font-size: 56px; } .crest { width: 66px; height: 70px; margin-bottom: 8px; } .divider { margin: 10px auto; }
+    .lux-names { font-size: 56px; } .crest { width: 74px; height: 74px; margin-bottom: 6px; } .divider { margin: 10px auto; }
     .date-lux { margin: 12px 0 8px; } .date-lux span { font-size: 28px; }
   }
 
@@ -394,16 +394,13 @@
       </g>
       <circle r="4.4" fill="#7a1913" stroke="url(#g)" stroke-width="1"/>
     </symbol>
-    <!-- اللوجو: تاج دهب فوق درع (الحروف بتتكتب فوقه في الصفحة) -->
-    <symbol id="crest" viewBox="-50 -56 100 106" overflow="visible">
-      <g transform="translate(0 -46.5) scale(.85)">
-        <path d="M-16 6L-18 -8L-8 -1L0 -12L8 -1L18 -8L16 6Z" fill="url(#g)" stroke="#5a4218" stroke-width=".6"/>
-        <rect x="-16.5" y="5" width="33" height="3.4" rx="1" fill="url(#g)"/>
-        <circle cx="-18" cy="-9" r="2" fill="url(#g)"/><circle cx="0" cy="-12.5" r="2.2" fill="url(#g)"/><circle cx="18" cy="-9" r="2" fill="url(#g)"/>
-        <circle cx="0" cy="0" r="1.8" fill="#9a2219"/><circle cx="-9" cy="2" r="1.2" fill="#9a2219"/><circle cx="9" cy="2" r="1.2" fill="#9a2219"/>
-      </g>
-      <path d="M-30 -34H30V0C30 22 15 34 0 42C-15 34 -30 22 -30 0Z" fill="#2a0c09" stroke="url(#g)" stroke-width="2.2"/>
-      <path d="M-24 -28H24V0C24 18 12 28 0 35C-12 28 -24 18 -24 0Z" fill="none" stroke="url(#g)" stroke-width=".8" opacity=".7"/>
+    <!-- اللوجو: إكليل ورق غار دهب (الحروف بتتكتب جواه في الصفحة) -->
+    <linearGradient id="gd" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7a5a24"/><stop offset=".35" stop-color="#c9a258"/><stop offset=".6" stop-color="#8d6a2e"/><stop offset=".82" stop-color="#d4b064"/><stop offset="1" stop-color="#7a5a24"/>
+    </linearGradient>
+    <symbol id="laurel" viewBox="-50 -50 100 100" overflow="visible">
+      <g fill="url(#gd)"><ellipse cx="-16.1" cy="-30.4" rx="3" ry="7" transform="rotate(0 -16.1 -30.4)"/><ellipse cx="-24.9" cy="-24.7" rx="3" ry="7" transform="rotate(16 -24.9 -24.7)"/><ellipse cx="-31.9" cy="-16.7" rx="3" ry="7" transform="rotate(32 -31.9 -16.7)"/><ellipse cx="-36.3" cy="-7.1" rx="3" ry="7" transform="rotate(48 -36.3 -7.1)"/><ellipse cx="-38.0" cy="3.3" rx="3" ry="7" transform="rotate(64 -38.0 3.3)"/><ellipse cx="-36.7" cy="13.8" rx="3" ry="7" transform="rotate(80 -36.7 13.8)"/><ellipse cx="-32.6" cy="23.6" rx="3" ry="7" transform="rotate(96 -32.6 23.6)"/><ellipse cx="-25.9" cy="31.8" rx="3" ry="7" transform="rotate(112 -25.9 31.8)"/><ellipse cx="-17.3" cy="37.9" rx="3" ry="7" transform="rotate(128 -17.3 37.9)"/><ellipse cx="16.1" cy="-30.4" rx="3" ry="7" transform="rotate(0 16.1 -30.4)"/><ellipse cx="24.9" cy="-24.7" rx="3" ry="7" transform="rotate(-16 24.9 -24.7)"/><ellipse cx="31.9" cy="-16.7" rx="3" ry="7" transform="rotate(-32 31.9 -16.7)"/><ellipse cx="36.3" cy="-7.1" rx="3" ry="7" transform="rotate(-48 36.3 -7.1)"/><ellipse cx="38.0" cy="3.3" rx="3" ry="7" transform="rotate(-64 38.0 3.3)"/><ellipse cx="36.7" cy="13.8" rx="3" ry="7" transform="rotate(-80 36.7 13.8)"/><ellipse cx="32.6" cy="23.6" rx="3" ry="7" transform="rotate(-96 32.6 23.6)"/><ellipse cx="25.9" cy="31.8" rx="3" ry="7" transform="rotate(-112 25.9 31.8)"/><ellipse cx="17.3" cy="37.9" rx="3" ry="7" transform="rotate(-128 17.3 37.9)"/></g>
+      <circle cy="4" r="30" fill="none" stroke="url(#gd)" stroke-width=".8" opacity=".7"/>
     </symbol>
     <radialGradient id="flameG" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#fffbe6"/><stop offset=".35" stop-color="#ffd27a"/><stop offset=".75" stop-color="#ff8a2a"/><stop offset="1" stop-color="#c8401a"/></radialGradient>
   </defs>
@@ -450,8 +447,8 @@
 
   <!-- 1. الدعوة -->
   <section class="page castle active" style="--base:7.8s">
-    <svg class="crest st" style="--i:0" viewBox="-50 -56 100 106" role="img" aria-label="A &amp; M"><use href="#crest" x="-50" y="-56" width="100" height="106"/>
-      <text x="0" y="8" text-anchor="middle" font-family="Cinzel" font-weight="600" font-size="22" fill="url(#g)" letter-spacing="1"><tspan data-f="gi">A</tspan><tspan font-size="13" dy="-2">&amp;</tspan><tspan dy="2" data-f="bi">M</tspan></text></svg>
+    <svg class="crest st" style="--i:0" viewBox="-50 -50 100 100" role="img" aria-label="A &amp; M"><use href="#laurel" x="-50" y="-50" width="100" height="100"/>
+      <text x="0" y="12" text-anchor="middle" font-family="Cinzel" font-weight="600" font-size="24" fill="url(#gd)"><tspan data-f="gi">A</tspan><tspan font-size="14" dy="-3">&amp;</tspan><tspan dy="3" data-f="bi">M</tspan></text></svg>
     <div class="ribbon st" style="--i:1">بحضور الأهل والأحباب</div>
     <div class="lux-names script foil st" style="--i:2" data-f="groom">Ammar</div>
     <div class="lux-amp script foil st" style="--i:3">&amp;</div>
