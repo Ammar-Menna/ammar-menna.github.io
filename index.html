@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ammar &amp; Menna — 04-11-2026</title>
 <meta name="description" content="دعوة لحضور حفل زفافنا">
-<meta name="theme-color" content="#060c0b">
+<meta name="theme-color" content="#17110a">
 <link rel="icon" href="data:,">
 <script>document.documentElement.classList.add("js");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +23,8 @@
     --night: #060c0b;
     --foil: linear-gradient(100deg, #9a773a 0%, #f4dea0 20%, #c39a53 38%, #fff0c2 52%, #b78c46 68%, #efd594 85%, #9a773a 100%);
     --pattern-gold: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%23d8bf8f' stroke-opacity='.07' stroke-width='1'%3E%3Crect x='14' y='14' width='20' height='20'/%3E%3Crect x='14' y='14' width='20' height='20' transform='rotate(45 24 24)'/%3E%3Cpath d='M0 0L11 11M48 0L37 11M0 48L11 37M48 48L37 37'/%3E%3C/g%3E%3C/svg%3E");
+    /* حيطة حجر: بلوكات بألوان مختلفة شوية وبينها فواصل */
+    --stone: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='72'%3E%3Cg fill='%23f0cf98'%3E%3Crect x='1' y='1' width='78' height='34' opacity='.05'/%3E%3Crect x='81' y='1' width='78' height='34' opacity='.025'/%3E%3Crect x='-39' y='37' width='78' height='34' opacity='.035'/%3E%3Crect x='41' y='37' width='78' height='34' opacity='.06'/%3E%3Crect x='121' y='37' width='78' height='34' opacity='.035'/%3E%3C/g%3E%3Cg fill='none' stroke='%23000' stroke-opacity='.5' stroke-width='2'%3E%3Cpath d='M0 0H160M0 36H160M0 72H160M0 0V36M80 0V36M40 36V72M120 36V72'/%3E%3C/g%3E%3C/svg%3E");
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   [hidden] { display: none !important; }
@@ -208,65 +210,101 @@
   .venue-line { font-size: 14px !important; color: #e9dfca !important; }
   .venue-line b { font-weight: 400; color: var(--gold-hi); }
 
-  /* ---------- الصفحات الفاتحة ---------- */
-  .page.light { background: var(--cream); }
-  .page.light .caps { color: var(--muted); }
-  .page.light .heading { font-size: clamp(32px, 9vw, 42px); color: var(--ink); line-height: 1.5; margin: 6px 0 4px; }
-  /* أول وآخر صفحة: نفس ستايل الصفحات الفاتحة، وواخدين من الباب لمسة الدهب بس */
-  .page.light .foil { background-image: linear-gradient(100deg, #85632a 0%, #d4b064 22%, #9a7535 40%, #e2c27b 55%, #8d6a2e 72%, #c9a258 88%, #85632a 100%); }
-  .page.light .mono { direction: ltr; border-color: rgba(176,141,87,.65); box-shadow: 0 0 0 4px rgba(176,141,87,.1); color: var(--gold); }
-  .page.light .invite, .page.light .lead { color: var(--ink); }
-  .page.light .divider { color: var(--gold); }
-  .page.light .venue-line { color: var(--muted) !important; }
-  .page.light .venue-line b { color: var(--gold); }
-  .frame {
-    position: absolute !important; inset: 34px 18px 50px; pointer-events: none;
-    border: 1px solid rgba(176,141,87,.55);
-    border-radius: 50% 50% 8px 8px / 22% 22% 8px 8px;
+  /* ---------- صفحات القلعة: حيطة حجر غامقة + نور مشاعل + دهب وأحمر ملكي ---------- */
+  .page.castle {
+    color: #eadcc0; padding: 84px 40px 92px;
+    background:
+      radial-gradient(ellipse 70% 30% at 12% 14%, rgba(255,170,80,.28), transparent 70%),
+      radial-gradient(ellipse 70% 30% at 88% 14%, rgba(255,170,80,.28), transparent 70%),
+      radial-gradient(ellipse 80% 55% at 50% 48%, rgba(255,205,135,.10), transparent 75%),
+      var(--stone),
+      linear-gradient(#2c2015, #1a130b 60%, #120d07);
   }
-  .frame::after { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(176,141,87,.28); border-radius: inherit; }
-  .sprig { position: absolute; width: 130px; height: 130px; opacity: .9; pointer-events: none; }
-  .sprig.tl { top: -6px; left: -6px; }
-  .sprig.br { bottom: -6px; right: -6px; transform: rotate(180deg); }
+  .page.castle::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 75% 70% at 50% 48%, transparent 50%, rgba(0,0,0,.6) 100%); }
+  .page.castle .dust { position: absolute !important; }
+  .page.castle .dust i { background: #ffc46b; box-shadow: 0 0 6px 1px rgba(255,170,70,.85); }
+  /* قوس الحجر: نفس قوس باب القلعة، بخطين دهب وحجر المفتاح فوق */
+  .arch {
+    position: absolute !important; inset: 40px 18px 46px; pointer-events: none;
+    border: 1.5px solid rgba(214,176,106,.8); border-radius: 50% 50% 6px 6px / 23% 23% 6px 6px;
+    background: radial-gradient(ellipse 90% 60% at 50% 40%, rgba(255,214,150,.07), rgba(0,0,0,.28));
+    box-shadow: 0 0 24px rgba(0,0,0,.5), inset 0 0 30px rgba(0,0,0,.45);
+  }
+  .arch::after { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(214,176,106,.32); border-radius: inherit; }
+  .arch .key { position: absolute; top: -19px; left: 50%; width: 38px; height: 38px; transform: translateX(-50%); filter: drop-shadow(0 2px 4px rgba(0,0,0,.6)); }
+  .arch .base { position: absolute; bottom: -1px; width: 34px; height: 12px; border: 1.5px solid rgba(214,176,106,.8); border-bottom: 0; background: #1a130b; }
+  .arch .base.l { left: -9px; } .arch .base.r { right: -9px; }
+  /* المشاعل فوق في الركنين، نارها بتترعش */
+  .torch { position: absolute !important; top: 18px; width: 30px; height: 84px; pointer-events: none; }
+  .torch.l { left: 10px; } .torch.r { right: 10px; }
+  .torch .glow { position: absolute; left: 50%; top: 2px; width: 120px; height: 120px; margin-left: -60px; margin-top: -36px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,190,90,.45), rgba(255,150,60,.12) 45%, transparent 70%); animation: glow 2.2s ease-in-out infinite alternate; }
+  .torch svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .torch .flame { transform-origin: 15px 30px; animation: flick 1.3s ease-in-out infinite alternate; }
+  .torch.r .flame, .torch.r .glow { animation-delay: -.6s; }
+  @keyframes flick { 0% { transform: scale(1, 1) skewX(0); } 35% { transform: scale(.94, 1.08) skewX(3deg); } 70% { transform: scale(1.04, .95) skewX(-3deg); } 100% { transform: scale(.97, 1.05) skewX(1deg); } }
+  @keyframes glow { 0% { opacity: .75; transform: scale(.95); } 50% { opacity: 1; } 100% { opacity: .82; transform: scale(1.05); } }
 
-  .count { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 40px; margin: 26px 0 18px; }
-  .count b { display: block; font-style: italic; font-weight: 300; font-size: clamp(54px, 16vw, 68px); line-height: 1; color: var(--gold); }
-  .count b::after { content: ""; display: block; width: 46px; height: 1px; margin: 10px auto 8px; background: var(--gold-soft); }
-  .count small { font-family: "Tajawal", sans-serif; font-size: 14px; color: var(--muted); }
-  .the-day { font-size: 36px; color: var(--gold); margin: 24px 0; }
-  .date-big { direction: ltr; font-variant-numeric: lining-nums; font-family: "Cormorant Garamond", serif; font-weight: 300; letter-spacing: .45em; font-size: 15px; margin-top: 6px; }
+  /* ختم شمع أحمر بحروف دهب */
+  .seal { direction: ltr; width: 76px; height: 76px; margin: 0 auto 16px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle at 34% 30%, #b13a30, #7a1913 55%, #4d0d09);
+    box-shadow: 0 0 0 3px #6a140f, 0 0 0 4px rgba(214,176,106,.35), 0 6px 14px rgba(0,0,0,.55), inset 0 -3px 8px rgba(0,0,0,.45), inset 0 3px 6px rgba(255,160,140,.25);
+    font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: 22px; color: #f3d48e; text-shadow: 0 1px 1px rgba(0,0,0,.5); position: relative; }
+  .seal::before { content: ""; position: absolute; inset: 7px; border-radius: 50%; border: 1px dashed rgba(243,212,142,.45); }
+  .seal em { font-family: "Great Vibes"; font-style: normal; font-size: 19px; margin: 0 2px; color: #e7c27c; }
+  /* شريطة حمرا للعناوين الصغيرة */
+  .ribbon { display: inline-block; padding: 7px 30px; margin-bottom: 8px;
+    font-family: "Tajawal", sans-serif; font-size: 13px; font-weight: 500; color: #f6dfa4;
+    background: linear-gradient(#8a221c, #5e130f); border-top: 1px solid rgba(232,196,120,.8); border-bottom: 1px solid rgba(232,196,120,.8);
+    clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 50%, 100% 100%, 0 100%, 12px 50%);
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,.5)); }
+  .page.castle .caps { color: #cdb48a; }
+  .page.castle .foil { text-shadow: none; filter: drop-shadow(0 2px 6px rgba(0,0,0,.55)); }
+  .page.castle .heading { font-size: clamp(34px, 9.5vw, 44px); line-height: 1.5; margin: 4px 0; }
+  .page.castle .divider { color: #d6b06a; }
+  .page.castle .venue-line { color: #e2d2b2 !important; }
+  .page.castle .venue-line b { color: #f3d48e; }
 
-  .verse-note { font-size: 16px; color: var(--muted); }
+  .count { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; margin: 22px 0 18px; width: min(250px, 100%); }
+  .count > div { padding: 18px 0 12px; border: 1px solid rgba(214,176,106,.55); border-radius: 60px 60px 4px 4px;
+    background: linear-gradient(rgba(255,210,140,.08), rgba(0,0,0,.35)); box-shadow: inset 0 0 14px rgba(0,0,0,.5); }
+  .count b { display: block; font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: clamp(42px, 12vw, 52px); line-height: 1; color: #f0cf88; font-variant-numeric: lining-nums; text-shadow: 0 0 14px rgba(255,180,80,.35); }
+  .count small { display: block; margin-top: 6px; font-family: "Tajawal", sans-serif; font-size: 13px; color: #cdb48a; }
+  .the-day { font-size: 36px; margin: 24px 0; }
+  .date-big { direction: ltr; font-variant-numeric: lining-nums; font-family: "Cormorant Garamond", serif; font-weight: 400; letter-spacing: .45em; font-size: 15px; margin-top: 6px; color: #cdb48a; }
+
+  .verse-note { font-size: 16px; color: #cdb48a; }
   .pause-btn { margin: 10px 0 26px; }
-  .bism { font-family: "Amiri", serif; font-size: 22px; color: var(--gold); margin: 10px 0 14px; direction: rtl; }
-  .verse { font-family: "Amiri", serif; direction: rtl; font-size: clamp(21px, 5.8vw, 25px); line-height: 2.1; color: var(--ink); max-width: 290px; }
-  .verse-ref { font-family: "Tajawal", sans-serif; font-size: 14px; color: var(--muted); margin-top: 12px; }
-  .body-txt { font-size: 19px; line-height: 1.9; max-width: 330px; margin: 12px auto 0; color: var(--ink); }
+  .bism { font-family: "Amiri", serif; font-size: 22px; color: #f0cf88; margin: 10px 0 14px; direction: rtl; }
+  .verse { font-family: "Amiri", serif; direction: rtl; font-size: clamp(21px, 5.8vw, 25px); line-height: 2.1; color: #f1e5cc; max-width: 290px; }
+  .verse-ref { font-family: "Tajawal", sans-serif; font-size: 14px; color: #cdb48a; margin-top: 12px; }
+  .body-txt { font-size: 20px; line-height: 1.9; max-width: 300px; margin: 6px auto 0; color: #f1e5cc; }
   .detail { margin: 16px 0 0; }
   .detail .caps { display: block; margin-bottom: 4px; }
-  .detail .val { font-size: 23px; font-weight: 700; color: var(--ink); }
-  .detail .sub { font-variant-numeric: lining-nums; font-size: 16px; font-weight: 300; color: var(--muted); }
-  .lead { font-size: 19px; line-height: 1.7; color: #e9dfca; max-width: 290px; margin: 8px auto 0; }
+  .detail .val { font-size: 24px; font-weight: 700; color: #f6e3b8; }
+  .detail .sub { font-variant-numeric: lining-nums; font-size: 16px; color: #cdb48a; }
+  .invite { color: #f1e5cc; }
   .btn {
     display: inline-block; margin: 6px 4px 0; padding: 9px 20px;
-    border: 1px solid var(--gold); border-radius: 40px; background: transparent;
-    font-family: "Tajawal", sans-serif; font-weight: 400; font-size: 14px; letter-spacing: 0;
-    color: var(--ink); text-decoration: none; cursor: pointer;
+    border: 1px solid rgba(232,196,120,.85); border-radius: 40px; background: rgba(0,0,0,.3);
+    font-family: "Tajawal", sans-serif; font-weight: 500; font-size: 14px; letter-spacing: 0;
+    color: #f6dfa4; text-decoration: none; cursor: pointer;
   }
-  .btn:hover { background: var(--gold); color: #fff; }
+  .btn:hover { background: #d6b06a; color: #1a130b; }
   .btns { margin-top: 18px; }
 
   @media (max-height: 700px) {
-    .count { gap: 14px 36px; margin: 16px 0 12px; } .count b { font-size: 48px; }
-    .page.light .heading { font-size: 30px; } .verse { font-size: 19px; line-height: 1.9; }
-    .lux-names { font-size: 56px; } .mono { direction: ltr; width: 54px; height: 54px; margin-bottom: 10px; } .divider { margin: 10px auto; }
+    .count { gap: 10px 14px; margin: 14px 0 10px; } .count > div { padding: 12px 0 8px; } .count b { font-size: 38px; }
+    .page.castle .heading { font-size: 30px; } .page.castle { padding-top: 70px; padding-bottom: 76px; } .verse { font-size: 19px; line-height: 1.9; }
+    .lux-names { font-size: 56px; } .seal { width: 60px; height: 60px; font-size: 18px; margin-bottom: 10px; } .divider { margin: 10px auto; }
     .date-lux { margin: 12px 0 8px; } .date-lux span { font-size: 28px; }
   }
 
   /* شريط التقدم + تلميح */
   .bars { position: fixed; top: max(10px, env(safe-area-inset-top)); left: 10px; right: 10px; z-index: 20; display: flex; gap: 4px; pointer-events: none; }
-  .bars i { flex: 1; height: 3.5px; border-radius: 3px; background: rgba(55,44,33,.42); overflow: hidden; box-shadow: 0 0 0 .5px rgba(255,255,255,.35); }
-  .bars i::after { content: ""; display: block; height: 100%; width: 0; background: #5a3f14; transition: width .5s ease; }
+  .bars i { flex: 1; height: 3.5px; border-radius: 3px; background: rgba(243,223,166,.22); overflow: hidden; }
+  .bars i::after { content: ""; display: block; height: 100%; width: 0; background: #e2c07a; transition: width .5s ease; }
   .bars i.on::after { width: 100%; }
   .tap-hint {
     position: fixed; bottom: max(22px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); z-index: 20;
@@ -282,8 +320,8 @@
   #music {
     position: fixed; bottom: max(14px, env(safe-area-inset-bottom)); right: 14px; z-index: 30;
     width: 40px; height: 40px; border-radius: 50%;
-    border: 1px solid rgba(176,141,87,.6); background: rgba(248,244,238,.9);
-    color: var(--gold); font-size: 13px; cursor: pointer;
+    border: 1px solid rgba(232,196,120,.7); background: rgba(26,19,11,.85);
+    color: #f0cf88; font-size: 13px; cursor: pointer;
     display: none; align-items: center; justify-content: center;
     box-shadow: 0 4px 14px rgba(0,0,0,.2);
   }
@@ -350,6 +388,18 @@
       <rect x="80" y="2" width="10" height="10" transform="rotate(45 85 7)" fill="none" stroke="currentColor"/>
       <rect x="82.5" y="4.5" width="5" height="5" transform="rotate(45 85 7)" fill="currentColor"/>
     </symbol>
+    <!-- وردة حجر المفتاح فوق القوس (زي الوردة اللي فوق باب القلعة) -->
+    <symbol id="rosette" viewBox="-20 -20 40 40">
+      <circle r="19" fill="#22180e" stroke="url(#g)" stroke-width="1.2"/>
+      <g fill="url(#g)">
+        <ellipse rx="3.4" ry="7.5" cy="-8.5"/><ellipse rx="3.4" ry="7.5" cy="-8.5" transform="rotate(45)"/>
+        <ellipse rx="3.4" ry="7.5" cy="-8.5" transform="rotate(90)"/><ellipse rx="3.4" ry="7.5" cy="-8.5" transform="rotate(135)"/>
+        <ellipse rx="3.4" ry="7.5" cy="-8.5" transform="rotate(180)"/><ellipse rx="3.4" ry="7.5" cy="-8.5" transform="rotate(225)"/>
+        <ellipse rx="3.4" ry="7.5" cy="-8.5" transform="rotate(270)"/><ellipse rx="3.4" ry="7.5" cy="-8.5" transform="rotate(315)"/>
+      </g>
+      <circle r="4.4" fill="#7a1913" stroke="url(#g)" stroke-width="1"/>
+    </symbol>
+    <radialGradient id="flameG" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#fffbe6"/><stop offset=".35" stop-color="#ffd27a"/><stop offset=".75" stop-color="#ff8a2a"/><stop offset="1" stop-color="#c8401a"/></radialGradient>
   </defs>
 </svg>
 
@@ -393,12 +443,9 @@
 <main class="book" id="book">
 
   <!-- 1. الدعوة -->
-  <section class="page light active" style="--base:7.8s">
-    <div class="frame"></div>
-    <svg class="sprig tl"><use href="#sprig"/></svg>
-    <svg class="sprig br"><use href="#sprig"/></svg>
-    <div class="mono st" style="--i:0"><span data-f="gi">M</span><em>&amp;</em><span data-f="bi">M</span></div>
-    <div class="caps st" style="--i:1">بحضور الأهل والأحباب</div>
+  <section class="page castle active" style="--base:7.8s">
+    <div class="seal st" style="--i:0"><span data-f="gi">A</span><em>&amp;</em><span data-f="bi">M</span></div>
+    <div class="ribbon st" style="--i:1">بحضور الأهل والأحباب</div>
     <div class="lux-names script foil st" style="--i:2" data-f="groom">Ammar</div>
     <div class="lux-amp script foil st" style="--i:3">&amp;</div>
     <div class="lux-names script foil st" style="--i:4" data-f="bride">Menna</div>
@@ -411,70 +458,47 @@
   </section>
 
   <!-- 2. العداد -->
-  <section class="page light">
-    <div class="frame"></div>
-    <svg class="sprig tl"><use href="#sprig"/></svg>
-    <svg class="sprig br"><use href="#sprig"/></svg>
-    <div class="caps st" style="--i:0">العد التنازلي</div>
-    <div class="heading ar-script st" style="--i:1">كل لحظة بتقرّبنا</div>
+  <section class="page castle">
+    <div class="ribbon st" style="--i:0">العد التنازلي</div>
+    <div class="heading ar-script foil st" style="--i:1">كل لحظة بتقرّبنا</div>
     <div class="count st" id="timer" style="--i:2">
       <div><b id="d">00</b><small>يوم</small></div>
       <div><b id="h">00</b><small>ساعة</small></div>
       <div><b id="m">00</b><small>دقيقة</small></div>
       <div><b id="s">00</b><small>ثانية</small></div>
     </div>
-    <div class="the-day ar-script" id="theDay" hidden>النهارده يوم الفرح</div>
-    <div class="date-big st" style="--i:3;color:var(--muted)" data-f="date">04-11-2026</div>
+    <div class="the-day ar-script foil" id="theDay" hidden>النهارده يوم الفرح</div>
+    <div class="date-big st" style="--i:3" data-f="date">04-11-2026</div>
   </section>
 
   <!-- 3. الآية -->
-  <section class="page light" style="background:var(--paper)">
-    <div class="frame"></div>
+  <section class="page castle">
     <div class="verse-note st" style="--i:0">يُرجى إيقاف الموسيقى أثناء قراءة الآية</div>
     <button class="btn pause-btn st" id="versePause" style="--i:1">إيقاف الموسيقى</button>
-        <div class="bism st" style="--i:3">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <div class="bism st" style="--i:3">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
     <div class="verse st" style="--i:4">﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ﴾</div>
     <div class="verse-ref st" style="--i:5">سورة الروم — الآية 21</div>
   </section>
 
   <!-- 4. الشكر -->
-  <section class="page light">
-    <div class="frame"></div>
-    <svg class="sprig tl"><use href="#sprig"/></svg>
-    <svg class="sprig br"><use href="#sprig"/></svg>
-    <div class="caps st" style="--i:0">كلمة شكر</div>
-    <div class="heading ar-script st" style="--i:1">شكراً من القلب</div>
-    <p class="body-txt st" style="--i:2" data-f="thanks">إلى أهلنا وأحبابنا الذين كانوا معنا في كل خطوة، محبتكم هي ما أوصلنا إلى هذا اليوم، ويسعدنا أن نحتفل معكم.</p>
+  <section class="page castle">
+    <div class="ribbon st" style="--i:0">كلمة شكر</div>
+    <div class="heading ar-script foil st" style="--i:1">شكراً من القلب</div>
+    <svg class="divider st" style="--i:2"><use href="#divider"/></svg>
+    <p class="body-txt st" style="--i:3" data-f="thanks">إلى أهلنا وأحبابنا الذين كانوا معنا في كل خطوة، محبتكم هي ما أوصلنا إلى هذا اليوم، ويسعدنا أن نحتفل معكم.</p>
   </section>
 
-  <!-- 5. الميعاد والمكان -->
-  <section class="page light">
-    <div class="frame"></div>
-    <svg class="sprig tl"><use href="#sprig"/></svg>
-    <svg class="sprig br"><use href="#sprig"/></svg>
-    <div class="caps st" style="--i:0">موعد الحفل</div>
-    <div class="heading ar-script st" style="--i:1">الزمان والمكان</div>
+  <!-- 5. الميعاد والمكان (آخر صفحة) -->
+  <section class="page castle">
+    <div class="ribbon st" style="--i:0">موعد الحفل</div>
+    <div class="heading ar-script foil st" style="--i:1">الزمان والمكان</div>
     <div class="detail st" style="--i:2"><span class="caps">استقبال الضيوف</span><div class="val" data-f="doorsOpen">الساعة 7:00 مساءً</div><div class="sub" data-f="date">04-11-2026</div></div>
     <div class="detail st" style="--i:3"><span class="caps">المكان</span><div class="val" data-f="venueName">قاعة التراث</div><div class="sub" data-f="venueAddress">البحر الأعظم، طلخا، الدقهلية</div></div>
     <div class="btns st" style="--i:4">
-      <a class="btn" id="mapBtn" href="https://www.google.com/maps/search/?api=1&amp;query=Al%20Masa%20Hotel%20Nasr%20City%20Cairo" target="_blank" rel="noopener">افتح الخريطة</a>
+      <a class="btn" id="mapBtn" href="https://www.google.com/maps/dir/?api=1&amp;destination=31.049694,31.3818059" target="_blank" rel="noopener">افتح الخريطة</a>
       <a class="btn" id="calBtn" target="_blank" rel="noopener">أضف للتقويم</a>
     </div>
-  </section>
-
-  <!-- 6. اللبس + الختام -->
-  <section class="page light">
-    <div class="frame"></div>
-    <svg class="sprig tl"><use href="#sprig"/></svg>
-    <svg class="sprig br"><use href="#sprig"/></svg>
-    <div class="caps st" style="--i:0">اللبس</div>
-    <p class="lead st" style="--i:1" data-f="dressCode">لا يوجد زي رسمي محدد — تعالوا بأجمل إطلالة</p>
-    <svg class="divider st" style="--i:2;margin:28px auto"><use href="#divider"/></svg>
-    <div class="caps st" style="--i:3">في انتظاركم لنحتفل معاً</div>
-    <div class="lux-names script foil st" style="--i:4;font-size:clamp(46px,13vw,60px);margin-top:12px" data-f="names">Ammar &amp; Menna</div>
-    <div class="date-lux st" style="--i:5">
-      <span class="foil" data-f="dd">04</span><i></i><span class="foil" data-f="mm">11</span><i></i><span class="foil" data-f="yyyy">2026</span>
-    </div>
+    <div class="lux-names script foil st" style="--i:5;font-size:clamp(40px,11vw,52px);margin-top:26px" data-f="names">Ammar &amp; Menna</div>
   </section>
 
 </main>
@@ -494,7 +518,6 @@ const CONFIG = {
   venueAddress: "البحر الأعظم، طلخا، الدقهلية",
   mapQuery: "31.049694,31.3818059",       // اللي يتكتب في جوجل ماب، أو حط لينك كامل في mapUrl
   mapUrl: "https://www.google.com/maps/dir/?api=1&destination=31.049694,31.3818059",
-  dressCode: "لا يوجد زي رسمي محدد — تعالوا بأجمل إطلالة",
   thanks: "إلى أهلنا وأحبابنا الذين كانوا معنا في كل خطوة، محبتكم هي ما أوصلنا إلى هذا اليوم، ويسعدنا أن نحتفل معكم.",
   music: "music.mp3"                     // ملف الموسيقى جنب الملف ده (سيبه فاضي لو مش عايز موسيقى)
 };
@@ -518,11 +541,23 @@ const fields = {
   doorsOpen: CONFIG.doorsOpen,
   venueName: CONFIG.venueName,
   venueAddress: CONFIG.venueAddress,
-  dressCode: CONFIG.dressCode,
   thanks: CONFIG.thanks
 };
 document.querySelectorAll("[data-f]").forEach(el => { el.textContent = fields[el.dataset.f] ?? ""; });
 document.title = `${fields.names} — ${fields.date}`;
+
+/* ---------- ديكور القلعة: القوس والمشاعل وشرار النار في كل صفحة ---------- */
+const torch = side => `<div class="torch ${side}"><div class="glow"></div><svg viewBox="0 0 30 84">
+  <g class="flame"><path d="M15 2C22 13 23 21 15 30C7 21 8 13 15 2Z" fill="url(#flameG)"/><path d="M15 14C18 19 18 24 15 29C12 24 12 19 15 14Z" fill="#fffbe6"/></g>
+  <path d="M6 30H24L20.5 39H9.5Z" fill="url(#g)"/><rect x="9" y="39" width="12" height="3" fill="#7b5a26"/>
+  <rect x="13.5" y="42" width="3" height="24" fill="#6e5021"/><path d="M15 64Q15 72 7 74" fill="none" stroke="#6e5021" stroke-width="2.5"/>
+  <rect x="3" y="70" width="8" height="12" rx="1.5" fill="url(#g)"/></svg></div>`;
+document.querySelectorAll(".page.castle").forEach(p => {
+  const dust = [...Array(10)].map(() =>
+    `<i style="left:${(Math.random() * 100).toFixed(1)}%;--t:${(9 + Math.random() * 8).toFixed(1)}s;--d:-${(Math.random() * 14).toFixed(1)}s;--x:${(Math.random() * 60 - 30).toFixed(0)}px"></i>`).join("");
+  p.insertAdjacentHTML("afterbegin",
+    `<div class="dust">${dust}</div><div class="arch"><svg class="key"><use href="#rosette"/></svg><i class="base l"></i><i class="base r"></i></div>${torch("l")}${torch("r")}`);
+});
 
 /* ---------- الموسيقى: تحاول تشتغل أول ما اللينك يتفتح، ولو المتصفح منعها تشتغل مع أول لمسة ---------- */
 const audio = document.getElementById("audio");
