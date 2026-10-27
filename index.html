@@ -130,7 +130,6 @@
   #door:checked ~ #gate .reveal-cap { opacity: 1; transform: none; }
   .reveal-cap .script { font-size: clamp(40px, 11vw, 56px); line-height: 1.15; color: #fff6e0; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
   .reveal-cap .caps { color: #f3e3bd; font-size: 13px; margin-top: 4px; }
-  .reveal-cap .credit { direction: ltr; margin-top: 10px; font-family: "Cormorant Garamond"; font-size: 10px; letter-spacing: .2em; color: rgba(243,227,189,.6); }
 
   /* ذرات دهب */
   .dust { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
@@ -433,7 +432,6 @@
     <div class="reveal-cap">
       <div class="script" data-f="names">Ammar &amp; Menna</div>
       <div class="caps" data-f="date">04-11-2026</div>
-      <div class="credit">PHOTO · FROG STUDIO</div>
     </div>
   </div>
 </label>
@@ -484,15 +482,7 @@
     <div class="verse-ref st" style="--i:5">سورة الروم — الآية 21</div>
   </section>
 
-  <!-- 4. الشكر -->
-  <section class="page castle">
-    <div class="ribbon st" style="--i:0">كلمة شكر</div>
-    <div class="heading ar-script foil st" style="--i:1">شكراً من القلب</div>
-    <svg class="divider st" style="--i:2"><use href="#divider"/></svg>
-    <p class="body-txt st" style="--i:3" data-f="thanks">إلى أهلنا وأحبابنا الذين كانوا معنا في كل خطوة، محبتكم هي ما أوصلنا إلى هذا اليوم، ويسعدنا أن نحتفل معكم.</p>
-  </section>
-
-  <!-- 5. الميعاد والمكان (آخر صفحة) -->
+  <!-- 4. الميعاد والمكان (آخر صفحة) -->
   <section class="page castle">
     <div class="ribbon st" style="--i:0">موعد الحفل</div>
     <div class="heading ar-script foil st" style="--i:1">الزمان والمكان</div>
@@ -522,7 +512,6 @@ const CONFIG = {
   venueAddress: "البحر الأعظم، طلخا، الدقهلية",
   mapQuery: "31.049694,31.3818059",       // اللي يتكتب في جوجل ماب، أو حط لينك كامل في mapUrl
   mapUrl: "https://www.google.com/maps/dir/?api=1&destination=31.049694,31.3818059",
-  thanks: "إلى أهلنا وأحبابنا الذين كانوا معنا في كل خطوة، محبتكم هي ما أوصلنا إلى هذا اليوم، ويسعدنا أن نحتفل معكم.",
   music: "music.mp3"                     // ملف الموسيقى جنب الملف ده (سيبه فاضي لو مش عايز موسيقى)
 };
 /* ========================================================= */
@@ -545,7 +534,6 @@ const fields = {
   doorsOpen: CONFIG.doorsOpen,
   venueName: CONFIG.venueName,
   venueAddress: CONFIG.venueAddress,
-  thanks: CONFIG.thanks
 };
 document.querySelectorAll("[data-f]").forEach(el => { el.textContent = fields[el.dataset.f] ?? ""; });
 document.title = `${fields.names} — ${fields.date}`;
