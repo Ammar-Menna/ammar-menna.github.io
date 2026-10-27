@@ -43,45 +43,49 @@
   @keyframes foil { to { background-position: 220% 0; } }
 
   /* ===================== المدخل (صورة الباب) ===================== */
-  /* الصورة 940×1672 — الباب متقاس منها بالبكسل: من x=255 لـ 679، ومن y=302 لـ 1323، والفاصل بين الضلفتين عند x=468 */
+  /* الصورة door.jpg مقاسها 900×1600. الباب متقاس منها بالبكسل: من x=240 لحد 660، ومن y=350 لحد 1204، والفاصل بين الضلفتين عند x=449، والقوس نص دايرة نص قطرها 210 */
   #gate {
     position: fixed; inset: 0; z-index: 100; display: block; cursor: pointer; overflow: hidden;
     background: #2a2115;
-    transition: opacity 1s ease 3.1s, visibility 0s linear 4.1s;
+    transition: opacity 1s ease 7.4s, visibility 0s linear 8.4s;
   }
+  #gate.skip { transition: opacity .6s ease, visibility 0s linear .6s; }
   #door:checked ~ #gate { opacity: 0; visibility: hidden; pointer-events: none; }
   .scene {
     position: absolute; left: 50%; top: 50%;
-    width: max(100vw, calc(100vh * 940 / 1672)); aspect-ratio: 940 / 1672;
-    transform: translate(-50%, -50%); transform-origin: 49.68% 48.59%;
-    transition: transform 2.4s cubic-bezier(.6,0,.35,1) 1.3s;
+    width: max(100vw, calc(100vh * 900 / 1600)); aspect-ratio: 900 / 1600;
+    transform: translate(-50%, -50%); transform-origin: 50% 48.56%;
+    transition: transform 2.6s cubic-bezier(.6,0,.35,1) 1.2s;
   }
-  @supports (height: 100dvh) { .scene { width: max(100vw, calc(100dvh * 940 / 1672)); } }
-  #door:checked ~ #gate .scene { transform: translate(-50%, -50%) scale(3.2); }
+  @supports (height: 100dvh) { .scene { width: max(100vw, calc(100dvh * 900 / 1600)); } }
+  #door:checked ~ #gate .scene { transform: translate(-50%, -50%) scale(2.2); }
   .scene > .bg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-  .doorway { position: absolute; left: 27.128%; top: 18.062%; width: 45.106%; height: 61.065%; perspective: 1100px; }
+  .doorway { position: absolute; left: 26.667%; top: 21.875%; width: 46.667%; height: 53.375%; perspective: 1100px; }
+  /* ورا الضلفتين: صورة العروسين جوه قوس الباب */
   .door-light {
-    position: absolute; inset: 0;
-    clip-path: polygon(50.24% 0.00%, 47.64% 0.78%, 41.98% 2.74%, 35.14% 4.70%, 28.07% 6.66%, 21.46% 8.62%, 15.09% 10.58%, 10.38% 12.54%, 6.84% 14.50%, 4.25% 16.45%, 2.36% 18.41%, 1.18% 20.37%, 0.47% 22.33%, 0.24% 24.29%, 0.00% 25.47%, 0.00% 100.00%, 100.00% 100.00%, 100.00% 25.47%, 99.53% 24.29%, 99.29% 22.33%, 98.58% 20.37%, 97.17% 18.41%, 95.52% 16.45%, 92.92% 14.50%, 89.15% 12.54%, 84.91% 10.58%, 79.25% 8.62%, 72.17% 6.66%, 65.09% 4.70%, 58.73% 2.74%, 52.12% 0.78%);
-    background: radial-gradient(ellipse 70% 55% at 50% 58%, #fffdf6 0%, #fff2d2 30%, #f4cf86 62%, #c08a3e 100%);
+    position: absolute; inset: 0; overflow: hidden;
+    clip-path: polygon(0% 24.59%, 0.43% 21.38%, 1.7% 18.23%, 3.81% 15.18%, 6.7% 12.3%, 10.33% 9.62%, 14.64% 7.2%, 19.56% 5.08%, 25% 3.29%, 30.87% 1.87%, 37.06% 0.84%, 43.47% 0.21%, 50% 0%, 56.53% 0.21%, 62.94% 0.84%, 69.13% 1.87%, 75% 3.29%, 80.44% 5.08%, 85.36% 7.2%, 89.67% 9.62%, 93.3% 12.3%, 96.19% 15.18%, 98.3% 18.23%, 99.57% 21.38%, 100% 24.59%, 100% 100%, 0% 100%);
+    background: #fff2d2;
   }
+  .door-light img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; display: block; }
+  .door-light::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 40px 12px rgba(255,226,160,.75); }
   .leaf {
     position: absolute; top: 0; bottom: 0; overflow: hidden;
     transition: transform 2s cubic-bezier(.65,0,.3,1) .35s, filter 2s ease .35s;
     backface-visibility: hidden; will-change: transform;
   }
-  .leaf img { position: absolute; top: -29.58%; height: 163.76%; max-width: none; display: block; }
-  .leaf.l { left: 0; width: 50.24%; transform-origin: left center;
-    clip-path: polygon(100.00% 0.00%, 94.84% 0.78%, 83.57% 2.74%, 69.95% 4.70%, 55.87% 6.66%, 42.72% 8.62%, 30.05% 10.58%, 20.66% 12.54%, 13.62% 14.50%, 8.45% 16.45%, 4.69% 18.41%, 2.35% 20.37%, 0.94% 22.33%, 0.47% 24.29%, 0.00% 25.47%, 0.00% 100.00%, 100.00% 100.00%); }
-  .leaf.l img { left: -119.72%; width: 441.31%; }
-  .leaf.r { right: 0; width: 49.76%; transform-origin: right center;
-    clip-path: polygon(0.00% 0.00%, 3.79% 0.78%, 17.06% 2.74%, 29.86% 4.70%, 44.08% 6.66%, 58.29% 8.62%, 69.67% 10.58%, 78.20% 12.54%, 85.78% 14.50%, 91.00% 16.45%, 94.31% 18.41%, 97.16% 20.37%, 98.58% 22.33%, 99.05% 24.29%, 100.00% 25.47%, 100.00% 100.00%, 0.00% 100.00%); }
-  .leaf.r img { left: -221.80%; width: 445.50%; }
+  .leaf img { position: absolute; top: -40.984%; height: 187.354%; max-width: none; display: block; }
+  .leaf.l { left: 0; width: 49.762%; transform-origin: left center;
+    clip-path: polygon(0% 24.59%, 0.86% 21.38%, 3.42% 18.23%, 7.65% 15.18%, 13.46% 12.3%, 20.76% 9.62%, 29.43% 7.2%, 39.31% 5.08%, 50.24% 3.29%, 62.03% 1.87%, 74.47% 0.84%, 87.36% 0.21%, 100% 0%, 100% 100%, 0% 100%); }
+  .leaf.l img { left: -114.833%; width: 430.622%; }
+  .leaf.r { right: 0; width: 50.238%; transform-origin: right center;
+    clip-path: polygon(0% 0%, 13.46% 0.21%, 26.23% 0.84%, 38.56% 1.87%, 50.24% 3.29%, 61.06% 5.08%, 70.85% 7.2%, 79.43% 9.62%, 86.67% 12.3%, 92.42% 15.18%, 96.61% 18.23%, 99.15% 21.38%, 100% 24.59%, 100% 100%, 0% 100%); }
+  .leaf.r img { left: -212.796%; width: 426.540%; }
   #door:checked ~ #gate .leaf.l { transform: rotateY(80deg); filter: brightness(.7); }
   #door:checked ~ #gate .leaf.r { transform: rotateY(-80deg); filter: brightness(.7); }
   /* نبض نور خفيف عند المقابض عشان الضيف يعرف يضغط فين */
   .knock {
-    position: absolute; left: 50.2%; top: 66.4%; width: 22%; aspect-ratio: 1; transform: translate(-50%, -50%);
+    position: absolute; left: 49.76%; top: 63.2%; width: 22%; aspect-ratio: 1; transform: translate(-50%, -50%);
     border-radius: 50%; pointer-events: none;
     background: radial-gradient(circle, rgba(255,236,180,.55), rgba(255,236,180,0) 65%);
     animation: knock 2.4s ease-in-out infinite;
@@ -107,8 +111,23 @@
   #door:checked ~ #gate .gate-head, #door:checked ~ #gate .gate-foot { opacity: 0; }
   @keyframes breathe { 50% { opacity: .45; } }
 
-  .flash { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, #fffdf6, #fbeccb); opacity: 0; pointer-events: none; transition: opacity 1s ease 2.2s; }
-  #door:checked ~ #gate .flash { opacity: 1; }
+  /* بعد ما الباب يتفتح: صورة العروسين بالشاشة كلها لحد ما الدعوة تبدأ (الضغط عليها بيعدّيها) */
+  .reveal { position: absolute; inset: 0; overflow: hidden; background: #120d07; opacity: 0; pointer-events: none; transition: opacity 1.1s ease 2.4s; }
+  #door:checked ~ #gate .reveal { opacity: 1; }
+  .reveal .blur { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(26px) brightness(.5); }
+  .reveal .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; transform: scale(1.12); transition: transform 7s cubic-bezier(.2,.6,.3,1) 2.4s; }
+  @media (min-aspect-ratio: 3/4) { .reveal .photo { object-fit: contain; } }
+  #door:checked ~ #gate .reveal .photo { transform: scale(1); }
+  .reveal-cap {
+    position: absolute; left: 0; right: 0; bottom: 0; text-align: center;
+    padding: 90px 16px max(26px, env(safe-area-inset-bottom));
+    background: linear-gradient(rgba(20,14,6,0), rgba(20,14,6,.78));
+    opacity: 0; transform: translateY(14px); transition: opacity 1.2s ease 3.8s, transform 1.2s ease 3.8s;
+  }
+  #door:checked ~ #gate .reveal-cap { opacity: 1; transform: none; }
+  .reveal-cap .script { font-size: clamp(40px, 11vw, 56px); line-height: 1.15; color: #fff6e0; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
+  .reveal-cap .caps { color: #f3e3bd; font-size: 13px; margin-top: 4px; }
+  .reveal-cap .credit { direction: ltr; margin-top: 10px; font-family: "Cormorant Garamond"; font-size: 10px; letter-spacing: .2em; color: rgba(243,227,189,.6); }
 
   /* ذرات دهب */
   .dust { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
@@ -339,11 +358,11 @@
 <input type="checkbox" id="door" aria-label="افتح الدعوة">
 <label id="gate" for="door">
   <div class="scene">
-    <img class="bg" src="door.webp" alt="" fetchpriority="high">
+    <img class="bg" src="door.jpg" alt="" fetchpriority="high">
     <div class="doorway">
-      <div class="door-light"></div>
-      <div class="leaf l"><img src="door.webp" alt=""></div>
-      <div class="leaf r"><img src="door.webp" alt=""></div>
+      <div class="door-light"><img src="couple.jpg" alt=""></div>
+      <div class="leaf l"><img src="door.jpg" alt=""></div>
+      <div class="leaf r"><img src="door.jpg" alt=""></div>
       <div class="knock"></div>
     </div>
   </div>
@@ -355,7 +374,15 @@
     <span class="caps">اضغط لفتح الباب</span>
     <span class="sub" data-f="date">04-11-2026</span>
   </div>
-  <div class="flash"></div>
+  <div class="reveal">
+    <img class="blur" src="couple.jpg" alt="">
+    <img class="photo" src="couple.jpg" alt="عمار ومنة">
+    <div class="reveal-cap">
+      <div class="script" data-f="names">Ammar &amp; Menna</div>
+      <div class="caps" data-f="date">04-11-2026</div>
+      <div class="credit">PHOTO · FROG STUDIO</div>
+    </div>
+  </div>
 </label>
 
 <button id="music" aria-label="تشغيل أو إيقاف الموسيقى">❚❚</button>
@@ -366,7 +393,7 @@
 <main class="book" id="book">
 
   <!-- 1. الدعوة -->
-  <section class="page light active" style="--base:3.6s">
+  <section class="page light active" style="--base:7.8s">
     <div class="frame"></div>
     <svg class="sprig tl"><use href="#sprig"/></svg>
     <svg class="sprig br"><use href="#sprig"/></svg>
@@ -559,14 +586,25 @@ function go(n) {
 const next = () => go(cur === pages.length - 1 ? 0 : cur + 1);
 const prev = () => go(cur - 1);
 
-function showUI() { bars.hidden = false; hint.hidden = false; render(); }
-door.addEventListener("change", () => { startMusic(); setTimeout(showUI, 3700); });
+let ready = false, uiTimer;
+function showUI() { if (ready) return; ready = true; clearTimeout(uiTimer); bars.hidden = false; hint.hidden = false; render(); }
+door.addEventListener("change", () => { startMusic(); uiTimer = setTimeout(showUI, 7800); });
+// لو الضيف ضغط وهو بيتفرج على صورة العروسين: نعدّي على الدعوة على طول
+function skipReveal() {
+  document.getElementById("gate").classList.add("skip");
+  const p = pages[0];
+  p.style.setProperty("--base", ".6s");
+  p.classList.remove("active"); void p.offsetWidth; p.classList.add("active");
+  showUI();
+}
 
 // الضغط: الثلث اليمين يرجع، الباقي يقدّم — والسحب يمين/شمال (زي كتاب عربي)
 const book = document.getElementById("book");
 let sx = null, sy = 0;
 book.addEventListener("pointerdown", e => { sx = e.clientX; sy = e.clientY; });
 book.addEventListener("pointerup", e => {
+  if (!door.checked) return;
+  if (!ready) { sx = null; skipReveal(); return; }
   if (sx === null || e.target.closest("a, button")) { sx = null; return; }
   const dx = e.clientX - sx, dy = e.clientY - sy;
   sx = null;
@@ -575,6 +613,7 @@ book.addEventListener("pointerup", e => {
 });
 document.addEventListener("keydown", e => {
   if (!door.checked) return;
+  if (!ready) { skipReveal(); return; }
   if (e.key === "ArrowLeft" || e.key === " ") next();
   if (e.key === "ArrowRight") prev();
 });
