@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ammar &amp; Menna — 04-11-2026</title>
 <meta name="description" content="دعوة لحضور حفل زفافنا">
-<meta name="theme-color" content="#17110a">
+<meta name="theme-color" content="#e9dcc4">
 <link rel="icon" href="data:,">
 <script>document.documentElement.classList.add("js");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Tajawal:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Cinzel:wght@600&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Pinyon+Script&family=Tajawal:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --cream: #f3ece2;
@@ -25,6 +25,7 @@
     --pattern-gold: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%23d8bf8f' stroke-opacity='.07' stroke-width='1'%3E%3Crect x='14' y='14' width='20' height='20'/%3E%3Crect x='14' y='14' width='20' height='20' transform='rotate(45 24 24)'/%3E%3Cpath d='M0 0L11 11M48 0L37 11M0 48L11 37M48 48L37 37'/%3E%3C/g%3E%3C/svg%3E");
     /* حيطة حجر: بلوكات بألوان مختلفة شوية وبينها فواصل */
     --stone: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='72'%3E%3Cg fill='%23f0cf98'%3E%3Crect x='1' y='1' width='78' height='34' opacity='.05'/%3E%3Crect x='81' y='1' width='78' height='34' opacity='.025'/%3E%3Crect x='-39' y='37' width='78' height='34' opacity='.035'/%3E%3Crect x='41' y='37' width='78' height='34' opacity='.06'/%3E%3Crect x='121' y='37' width='78' height='34' opacity='.035'/%3E%3C/g%3E%3Cg fill='none' stroke='%23000' stroke-opacity='.5' stroke-width='2'%3E%3Cpath d='M0 0H160M0 36H160M0 72H160M0 0V36M80 0V36M40 36V72M120 36V72'/%3E%3C/g%3E%3C/svg%3E");
+    --stone-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='72'%3E%3Cg fill='%23a07a40'%3E%3Crect x='1' y='1' width='78' height='34' opacity='.05'/%3E%3Crect x='81' y='1' width='78' height='34' opacity='.02'/%3E%3Crect x='-39' y='37' width='78' height='34' opacity='.035'/%3E%3Crect x='41' y='37' width='78' height='34' opacity='.06'/%3E%3Crect x='121' y='37' width='78' height='34' opacity='.03'/%3E%3C/g%3E%3Cg fill='none' stroke='%237a5a2a' stroke-opacity='.22' stroke-width='1.6'%3E%3Cpath d='M0 0H160M0 36H160M0 72H160M0 0V36M80 0V36M40 36V72M120 36V72'/%3E%3C/g%3E%3C/svg%3E");
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   [hidden] { display: none !important; }
@@ -34,7 +35,7 @@
   body:has(#door:not(:checked)) { overflow: hidden !important; }
   #door { position: absolute; opacity: 0; pointer-events: none; }
 
-  .script { font-family: "Great Vibes", cursive; font-weight: 400; }
+  .script { font-family: "Pinyon Script", cursive; font-weight: 400; }
   .caps { font-family: "Tajawal", sans-serif; font-weight: 400; letter-spacing: 0; font-size: 13px; }
   .ar-script { font-family: "Aref Ruqaa", serif; font-weight: 400; }
   .foil {
@@ -201,7 +202,7 @@
   .mono em { font-family: "Great Vibes"; font-style: normal; font-size: 18px; margin: 0 2px; color: var(--gold-soft); }
   .page.dark .caps { color: var(--gold-soft); }
   .lux-names { font-size: clamp(60px, 18vw, 82px); line-height: 1.05; }
-  .lux-amp { font-size: 34px; line-height: 1; margin: 2px 0; }
+  .lux-amp { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 500; font-size: 40px; line-height: 1; margin: 4px 0; }
   .divider { width: 170px; height: 14px; margin: 16px auto; color: var(--gold-soft); }
   .invite { font-size: 19px; line-height: 1.8; color: #e9dfca; }
   .date-lux { direction: ltr; display: flex; align-items: center; justify-content: center; gap: 14px; margin: 18px 0 12px; }
@@ -210,101 +211,95 @@
   .venue-line { font-size: 14px !important; color: #e9dfca !important; }
   .venue-line b { font-weight: 400; color: var(--gold-hi); }
 
-  /* ---------- صفحات القلعة: حيطة حجر غامقة + نور مشاعل + دهب وأحمر ملكي ---------- */
+  /* ---------- صفحات القلعة: حيطة حجر فاتح عاجي + نور مشاعل + دهب وأحمر ملكي ---------- */
   .page.castle {
-    color: #eadcc0; padding: 84px 40px 92px;
+    color: #4a3a28; padding: 84px 40px 92px;
     background:
-      radial-gradient(ellipse 70% 30% at 12% 14%, rgba(255,170,80,.28), transparent 70%),
-      radial-gradient(ellipse 70% 30% at 88% 14%, rgba(255,170,80,.28), transparent 70%),
-      radial-gradient(ellipse 80% 55% at 50% 48%, rgba(255,205,135,.10), transparent 75%),
-      var(--stone),
-      linear-gradient(#2c2015, #1a130b 60%, #120d07);
+      radial-gradient(ellipse 70% 30% at 12% 14%, rgba(255,175,90,.22), transparent 70%),
+      radial-gradient(ellipse 70% 30% at 88% 14%, rgba(255,175,90,.22), transparent 70%),
+      radial-gradient(ellipse 75% 50% at 50% 46%, #fffaf0, transparent 72%),
+      var(--stone-light),
+      linear-gradient(#efe3cc, #e2d1b2);
   }
-  .page.castle::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 75% 70% at 50% 48%, transparent 50%, rgba(0,0,0,.6) 100%); }
+  .page.castle::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 80% 75% at 50% 48%, transparent 55%, rgba(120,88,45,.22) 100%); }
   .page.castle .dust { position: absolute !important; }
-  .page.castle .dust i { background: #ffc46b; box-shadow: 0 0 6px 1px rgba(255,170,70,.85); }
+  .page.castle .dust i { background: #e8a94a; box-shadow: 0 0 5px 1px rgba(230,160,60,.6); }
   /* قوس الحجر: نفس قوس باب القلعة، بخطين دهب وحجر المفتاح فوق */
   .arch {
     position: absolute !important; inset: 40px 18px 46px; pointer-events: none;
-    border: 1.5px solid rgba(214,176,106,.8); border-radius: 50% 50% 6px 6px / 23% 23% 6px 6px;
-    background: radial-gradient(ellipse 90% 60% at 50% 40%, rgba(255,214,150,.07), rgba(0,0,0,.28));
-    box-shadow: 0 0 24px rgba(0,0,0,.5), inset 0 0 30px rgba(0,0,0,.45);
+    border: 1.5px solid rgba(160,118,55,.75); border-radius: 50% 50% 6px 6px / 23% 23% 6px 6px;
+    background: radial-gradient(ellipse 90% 60% at 50% 40%, rgba(255,255,255,.35), rgba(255,250,238,.1));
+    box-shadow: 0 0 18px rgba(120,88,45,.15), inset 0 0 24px rgba(160,118,55,.12);
   }
-  .arch::after { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(214,176,106,.32); border-radius: inherit; }
-  .arch .key { position: absolute; top: -19px; left: 50%; width: 38px; height: 38px; transform: translateX(-50%); filter: drop-shadow(0 2px 4px rgba(0,0,0,.6)); }
-  .arch .base { position: absolute; bottom: -1px; width: 34px; height: 12px; border: 1.5px solid rgba(214,176,106,.8); border-bottom: 0; background: #1a130b; }
+  .arch::after { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(160,118,55,.3); border-radius: inherit; }
+  .arch .key { position: absolute; top: -19px; left: 50%; width: 38px; height: 38px; transform: translateX(-50%); filter: drop-shadow(0 2px 3px rgba(90,60,20,.35)); }
+  .arch .base { position: absolute; bottom: -1px; width: 34px; height: 12px; border: 1.5px solid rgba(160,118,55,.75); border-bottom: 0; background: #e6d6b8; }
   .arch .base.l { left: -9px; } .arch .base.r { right: -9px; }
   /* المشاعل فوق في الركنين، نارها بتترعش */
   .torch { position: absolute !important; top: 18px; width: 30px; height: 84px; pointer-events: none; }
   .torch.l { left: 10px; } .torch.r { right: 10px; }
   .torch .glow { position: absolute; left: 50%; top: 2px; width: 120px; height: 120px; margin-left: -60px; margin-top: -36px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,190,90,.45), rgba(255,150,60,.12) 45%, transparent 70%); animation: glow 2.2s ease-in-out infinite alternate; }
+    background: radial-gradient(circle, rgba(255,180,80,.38), rgba(255,150,60,.1) 45%, transparent 70%); animation: glow 2.2s ease-in-out infinite alternate; }
   .torch svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
   .torch .flame { transform-origin: 15px 30px; animation: flick 1.3s ease-in-out infinite alternate; }
   .torch.r .flame, .torch.r .glow { animation-delay: -.6s; }
   @keyframes flick { 0% { transform: scale(1, 1) skewX(0); } 35% { transform: scale(.94, 1.08) skewX(3deg); } 70% { transform: scale(1.04, .95) skewX(-3deg); } 100% { transform: scale(.97, 1.05) skewX(1deg); } }
   @keyframes glow { 0% { opacity: .75; transform: scale(.95); } 50% { opacity: 1; } 100% { opacity: .82; transform: scale(1.05); } }
 
-  /* ختم شمع أحمر بحروف دهب */
-  .seal { direction: ltr; width: 76px; height: 76px; margin: 0 auto 16px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    background: radial-gradient(circle at 34% 30%, #b13a30, #7a1913 55%, #4d0d09);
-    box-shadow: 0 0 0 3px #6a140f, 0 0 0 4px rgba(214,176,106,.35), 0 6px 14px rgba(0,0,0,.55), inset 0 -3px 8px rgba(0,0,0,.45), inset 0 3px 6px rgba(255,160,140,.25);
-    font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: 22px; color: #f3d48e; text-shadow: 0 1px 1px rgba(0,0,0,.5); position: relative; }
-  .seal::before { content: ""; position: absolute; inset: 7px; border-radius: 50%; border: 1px dashed rgba(243,212,142,.45); }
-  .seal em { font-family: "Great Vibes"; font-style: normal; font-size: 19px; margin: 0 2px; color: #e7c27c; }
+  /* اللوجو: درع ملكي أحمر غامق وفوقه تاج دهب، وجواه أول حرفين من الاسمين */
+  .crest { display: block; width: 84px; height: 89px; margin: 0 auto 14px; overflow: visible; filter: drop-shadow(0 5px 8px rgba(90,50,20,.35)); }
   /* شريطة حمرا للعناوين الصغيرة */
   .ribbon { display: inline-block; padding: 7px 30px; margin-bottom: 8px;
     font-family: "Tajawal", sans-serif; font-size: 13px; font-weight: 500; color: #f6dfa4;
     background: linear-gradient(#8a221c, #5e130f); border-top: 1px solid rgba(232,196,120,.8); border-bottom: 1px solid rgba(232,196,120,.8);
     clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 50%, 100% 100%, 0 100%, 12px 50%);
-    filter: drop-shadow(0 3px 5px rgba(0,0,0,.5)); }
-  .page.castle .caps { color: #cdb48a; }
-  .page.castle .foil { text-shadow: none; filter: drop-shadow(0 2px 6px rgba(0,0,0,.55)); }
+    filter: drop-shadow(0 3px 4px rgba(90,40,20,.3)); }
+  .page.castle .caps { color: #8a7356; }
+  .page.castle .foil { background-image: linear-gradient(100deg, #85632a 0%, #d4b064 22%, #9a7535 40%, #e2c27b 55%, #8d6a2e 72%, #c9a258 88%, #85632a 100%); filter: drop-shadow(0 1px 1px rgba(255,255,255,.6)); }
   .page.castle .heading { font-size: clamp(34px, 9.5vw, 44px); line-height: 1.5; margin: 4px 0; }
-  .page.castle .divider { color: #d6b06a; }
-  .page.castle .venue-line { color: #e2d2b2 !important; }
-  .page.castle .venue-line b { color: #f3d48e; }
+  .page.castle .divider { color: #a8803f; }
+  .page.castle .venue-line { color: #6b5a44 !important; }
+  .page.castle .venue-line b { color: #9a7535; }
 
   .count { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; margin: 22px 0 18px; width: min(250px, 100%); }
-  .count > div { padding: 18px 0 12px; border: 1px solid rgba(214,176,106,.55); border-radius: 60px 60px 4px 4px;
-    background: linear-gradient(rgba(255,210,140,.08), rgba(0,0,0,.35)); box-shadow: inset 0 0 14px rgba(0,0,0,.5); }
-  .count b { display: block; font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: clamp(42px, 12vw, 52px); line-height: 1; color: #f0cf88; font-variant-numeric: lining-nums; text-shadow: 0 0 14px rgba(255,180,80,.35); }
-  .count small { display: block; margin-top: 6px; font-family: "Tajawal", sans-serif; font-size: 13px; color: #cdb48a; }
+  .count > div { padding: 18px 0 12px; border: 1px solid rgba(160,118,55,.55); border-radius: 60px 60px 4px 4px;
+    background: linear-gradient(rgba(255,255,255,.55), rgba(236,222,194,.5)); box-shadow: inset 0 0 12px rgba(160,118,55,.15); }
+  .count b { display: block; font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: clamp(42px, 12vw, 52px); line-height: 1; color: #9a7535; font-variant-numeric: lining-nums; }
+  .count small { display: block; margin-top: 6px; font-family: "Tajawal", sans-serif; font-size: 13px; color: #8a7356; }
   .the-day { font-size: 36px; margin: 24px 0; }
-  .date-big { direction: ltr; font-variant-numeric: lining-nums; font-family: "Cormorant Garamond", serif; font-weight: 400; letter-spacing: .45em; font-size: 15px; margin-top: 6px; color: #cdb48a; }
+  .date-big { direction: ltr; font-variant-numeric: lining-nums; font-family: "Cormorant Garamond", serif; font-weight: 500; letter-spacing: .45em; font-size: 15px; margin-top: 6px; color: #8a7356; }
 
-  .verse-note { font-size: 16px; color: #cdb48a; }
+  .verse-note { font-size: 16px; color: #8a7356; }
   .pause-btn { margin: 10px 0 26px; }
-  .bism { font-family: "Amiri", serif; font-size: 22px; color: #f0cf88; margin: 10px 0 14px; direction: rtl; }
-  .verse { font-family: "Amiri", serif; direction: rtl; font-size: clamp(21px, 5.8vw, 25px); line-height: 2.1; color: #f1e5cc; max-width: 290px; }
-  .verse-ref { font-family: "Tajawal", sans-serif; font-size: 14px; color: #cdb48a; margin-top: 12px; }
-  .body-txt { font-size: 20px; line-height: 1.9; max-width: 300px; margin: 6px auto 0; color: #f1e5cc; }
+  .bism { font-family: "Amiri", serif; font-size: 22px; color: #9a7535; margin: 10px 0 14px; direction: rtl; }
+  .verse { font-family: "Amiri", serif; direction: rtl; font-size: clamp(21px, 5.8vw, 25px); line-height: 2.1; color: #3b3026; max-width: 290px; }
+  .verse-ref { font-family: "Tajawal", sans-serif; font-size: 14px; color: #8a7356; margin-top: 12px; }
+  .body-txt { font-size: 20px; line-height: 1.9; max-width: 300px; margin: 6px auto 0; color: #3b3026; }
   .detail { margin: 16px 0 0; }
   .detail .caps { display: block; margin-bottom: 4px; }
-  .detail .val { font-size: 24px; font-weight: 700; color: #f6e3b8; }
-  .detail .sub { font-variant-numeric: lining-nums; font-size: 16px; color: #cdb48a; }
-  .invite { color: #f1e5cc; }
+  .detail .val { font-size: 24px; font-weight: 700; color: #3b3026; }
+  .detail .sub { font-variant-numeric: lining-nums; font-size: 16px; color: #8a7356; }
+  .invite { color: #3b3026; }
   .btn {
     display: inline-block; margin: 6px 4px 0; padding: 9px 20px;
-    border: 1px solid rgba(232,196,120,.85); border-radius: 40px; background: rgba(0,0,0,.3);
+    border: 1px solid #b08d57; border-radius: 40px; background: rgba(255,255,255,.55);
     font-family: "Tajawal", sans-serif; font-weight: 500; font-size: 14px; letter-spacing: 0;
-    color: #f6dfa4; text-decoration: none; cursor: pointer;
+    color: #6b4f22; text-decoration: none; cursor: pointer;
   }
-  .btn:hover { background: #d6b06a; color: #1a130b; }
+  .btn:hover { background: #b08d57; color: #fff; }
   .btns { margin-top: 18px; }
 
   @media (max-height: 700px) {
     .count { gap: 10px 14px; margin: 14px 0 10px; } .count > div { padding: 12px 0 8px; } .count b { font-size: 38px; }
     .page.castle .heading { font-size: 30px; } .page.castle { padding-top: 70px; padding-bottom: 76px; } .verse { font-size: 19px; line-height: 1.9; }
-    .lux-names { font-size: 56px; } .seal { width: 60px; height: 60px; font-size: 18px; margin-bottom: 10px; } .divider { margin: 10px auto; }
+    .lux-names { font-size: 56px; } .crest { width: 66px; height: 70px; margin-bottom: 8px; } .divider { margin: 10px auto; }
     .date-lux { margin: 12px 0 8px; } .date-lux span { font-size: 28px; }
   }
 
   /* شريط التقدم + تلميح */
   .bars { position: fixed; top: max(10px, env(safe-area-inset-top)); left: 10px; right: 10px; z-index: 20; display: flex; gap: 4px; pointer-events: none; }
-  .bars i { flex: 1; height: 3.5px; border-radius: 3px; background: rgba(243,223,166,.22); overflow: hidden; }
-  .bars i::after { content: ""; display: block; height: 100%; width: 0; background: #e2c07a; transition: width .5s ease; }
+  .bars i { flex: 1; height: 3.5px; border-radius: 3px; background: rgba(90,63,20,.18); overflow: hidden; }
+  .bars i::after { content: ""; display: block; height: 100%; width: 0; background: #9a7535; transition: width .5s ease; }
   .bars i.on::after { width: 100%; }
   .tap-hint {
     position: fixed; bottom: max(22px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); z-index: 20;
@@ -320,8 +315,8 @@
   #music {
     position: fixed; bottom: max(14px, env(safe-area-inset-bottom)); right: 14px; z-index: 30;
     width: 40px; height: 40px; border-radius: 50%;
-    border: 1px solid rgba(232,196,120,.7); background: rgba(26,19,11,.85);
-    color: #f0cf88; font-size: 13px; cursor: pointer;
+    border: 1px solid rgba(176,141,87,.6); background: rgba(248,244,238,.92);
+    color: #9a7535; font-size: 13px; cursor: pointer;
     display: none; align-items: center; justify-content: center;
     box-shadow: 0 4px 14px rgba(0,0,0,.2);
   }
@@ -399,6 +394,17 @@
       </g>
       <circle r="4.4" fill="#7a1913" stroke="url(#g)" stroke-width="1"/>
     </symbol>
+    <!-- اللوجو: تاج دهب فوق درع (الحروف بتتكتب فوقه في الصفحة) -->
+    <symbol id="crest" viewBox="-50 -56 100 106" overflow="visible">
+      <g transform="translate(0 -46.5) scale(.85)">
+        <path d="M-16 6L-18 -8L-8 -1L0 -12L8 -1L18 -8L16 6Z" fill="url(#g)" stroke="#5a4218" stroke-width=".6"/>
+        <rect x="-16.5" y="5" width="33" height="3.4" rx="1" fill="url(#g)"/>
+        <circle cx="-18" cy="-9" r="2" fill="url(#g)"/><circle cx="0" cy="-12.5" r="2.2" fill="url(#g)"/><circle cx="18" cy="-9" r="2" fill="url(#g)"/>
+        <circle cx="0" cy="0" r="1.8" fill="#9a2219"/><circle cx="-9" cy="2" r="1.2" fill="#9a2219"/><circle cx="9" cy="2" r="1.2" fill="#9a2219"/>
+      </g>
+      <path d="M-30 -34H30V0C30 22 15 34 0 42C-15 34 -30 22 -30 0Z" fill="#2a0c09" stroke="url(#g)" stroke-width="2.2"/>
+      <path d="M-24 -28H24V0C24 18 12 28 0 35C-12 28 -24 18 -24 0Z" fill="none" stroke="url(#g)" stroke-width=".8" opacity=".7"/>
+    </symbol>
     <radialGradient id="flameG" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#fffbe6"/><stop offset=".35" stop-color="#ffd27a"/><stop offset=".75" stop-color="#ff8a2a"/><stop offset="1" stop-color="#c8401a"/></radialGradient>
   </defs>
 </svg>
@@ -444,7 +450,8 @@
 
   <!-- 1. الدعوة -->
   <section class="page castle active" style="--base:7.8s">
-    <div class="seal st" style="--i:0"><span data-f="gi">A</span><em>&amp;</em><span data-f="bi">M</span></div>
+    <svg class="crest st" style="--i:0" viewBox="-50 -56 100 106" role="img" aria-label="A &amp; M"><use href="#crest" x="-50" y="-56" width="100" height="106"/>
+      <text x="0" y="8" text-anchor="middle" font-family="Cinzel" font-weight="600" font-size="22" fill="url(#g)" letter-spacing="1"><tspan data-f="gi">A</tspan><tspan font-size="13" dy="-2">&amp;</tspan><tspan dy="2" data-f="bi">M</tspan></text></svg>
     <div class="ribbon st" style="--i:1">بحضور الأهل والأحباب</div>
     <div class="lux-names script foil st" style="--i:2" data-f="groom">Ammar</div>
     <div class="lux-amp script foil st" style="--i:3">&amp;</div>
